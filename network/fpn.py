@@ -222,9 +222,9 @@ class MobileBottleneck(nn.Module):
             last_conv = make_divisible(576 * width_mult)
             self.features4.append(conv_1x1_bn(input_channel, last_conv, nlin_layer=Hswish))
             # self.features.append(SEModule(last_conv))  # refer to paper Table2, but I think this is a mistake
-            self.features4.append(nn.AdaptiveAvgPool2d(1))
-            self.features4.append(nn.Conv2d(last_conv, last_channel, 1, 1, 0))
-            self.features4.append(Hswish(inplace=True))
+#             self.features4.append(nn.AdaptiveAvgPool2d(1))
+#             self.features4.append(nn.Conv2d(last_conv, last_channel, 1, 1, 0))
+#             self.features4.append(Hswish(inplace=True))
         else:
             raise NotImplementedError
 
